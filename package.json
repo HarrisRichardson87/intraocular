@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "heroku-postbuild": "npm install"
+   
+    // "heroku-postbuild": "npm install",
+    "start": "node ./www.js",
+    "build": "grunt dist",
+    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.5.3",
-    "mongoose": "^5.9.2"
+    "mongoose": "^5.9.2",
+    "bower": "^1.8.0",
+    "grunt": "^1.0.1"
   }
 }
