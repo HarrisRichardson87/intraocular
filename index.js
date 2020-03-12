@@ -9,13 +9,9 @@ app.use(express.json())
 app.use(cors())
 
 //For production//
-app.use(express.static("build"));
-
-
-app.get("*", (req, res) => {
-     res.sendFile(path.resolve(__dirname,  "build", "index.html"));
- });
-
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/index.html'));
+});
 //Connect to Mongo DB//
 mongoose
   .connect(`${url}`, { useNewUrlParser: true })
