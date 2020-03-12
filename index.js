@@ -9,7 +9,6 @@ require('dotenv').config();
 const url = process.env.DB_CONNECTION
 app.use(express.json())
 app.use(cors())
-const port = process.env.PORT || 3000;
 //Connect to Mongo DB//
 mongoose
   .connect(`${url}`, { useNewUrlParser: true })
