@@ -2,13 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express()
-const MongoClient = require('mongodb').MongoClient;
 const leaguesRoute = require('./route/leaguesRoute');
-const port = 5000 || process.env.PORT
 require('dotenv').config();
 const url = process.env.DB_CONNECTION
 app.use(express.json())
 app.use(cors())
+
 //Connect to Mongo DB//
 mongoose
   .connect(`${url}`, { useNewUrlParser: true })
@@ -19,4 +18,4 @@ mongoose
 app.use("/leagues", leaguesRoute);
 
 
-app.listen(port, () => console.log(`App serving on PORT ${port}`));
+app.listen(process.env.PORT || 5000)
