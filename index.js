@@ -10,10 +10,10 @@ app.use(express.json())
 app.use(cors())
 
 //For production//
-// app.get('*', function (req, res) {
-//   const index = path.join(__dirname,'index.html');
-//   res.sendFile(index);
-// });
+app.get('/', function (req, res) {
+  res.send(JSON.stringify({ Hello: "‘World’"}));
+
+});
 
 
 //Connect to Mongo DB//
