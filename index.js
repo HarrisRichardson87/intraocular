@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const app = express()
+const app = express();
+const path = require('path');
 const leaguesRoute = require('./route/leaguesRoute');
 require('dotenv').config();
 const url = process.env.DB_CONNECTION
