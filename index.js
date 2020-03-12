@@ -10,9 +10,12 @@ app.use(express.json())
 app.use(cors())
 
 //For production//
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+app.get('*', function (req, res) {
+  const index = path.join(__dirname, 'build', 'index.html');
+  res.sendFile(index);
 });
+
+
 //Connect to Mongo DB//
 mongoose
   .connect(`${url}`, { useNewUrlParser: true })
